@@ -32,5 +32,6 @@ hatirlatma_tarih_secici = DateEntry(frame_ust, widh=12, background='orange', for
 hatirlatma_tarih_secici._top_cal.overrideredirect(False)
 hatirlatma_tarih_secici.pack(padx=10, pady=10, side=LEFT)
 
+Label(frame_alt_sol, bg='#add8e6', text="Hatırlatma Yöntemi",font="verdana 10 bold").pack(padx=10, pady=10, anchor=NW)
 
 master.mainloop()
