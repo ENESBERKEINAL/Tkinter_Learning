@@ -42,4 +42,16 @@ R1.pack(anchor=NW, pady=5, padx=15)
 R2=Radiobutton(frame_alt_sol, text="E-posta gönder", variable=var, value=2, bg='#add8e6', font="verdana 10" )
 R2.pack(anchor=NW, pady=5, padx=15)
 
+var1=IntVar()
+C1=Checkbutton(frame_alt_sol, text="Bir Hafta Önce", variable=var1, onvalue=1, offvalue=0,bg='#add8e6', font="verdana 10" )
+C1.pack(anchor=NW, pady=2, padx=25)
+
+var2=IntVar()
+C2=Checkbutton(frame_alt_sol, text="Bir Gün Önce", variable=var2, onvalue=1, offvalue=0,bg='#add8e6', font="verdana 10" )
+C2.pack(anchor=NW, pady=2, padx=25)
+
+var3=IntVar()
+C3=Checkbutton(frame_alt_sol, text="Aynı Gün", variable=var3, onvalue=1, offvalue=0,bg='#add8e6', font="verdana 10" )
+C3.pack(anchor=NW, pady=2, padx=25)
+
 master.mainloop()
