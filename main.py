@@ -54,4 +54,20 @@ var3=IntVar()
 C3=Checkbutton(frame_alt_sol, text="Aynı Gün", variable=var3, onvalue=1, offvalue=0,bg='#add8e6', font="verdana 10" )
 C3.pack(anchor=NW, pady=2, padx=25)
 
+def gonder():
+    pass
+    return
+
+Label(frame_alt_sag, bg='#add8e6', text="Hatırlatma Mesajı",font="verdana 15 bold").pack(padx=10, pady=10, anchor=NW)
+
+metin_alanı=Text(frame_alt_sag, height=9, width=50)
+metin_alanı.tag_configure('style',foreground="#bfbfbf",font=('Verdena',7,'bold'))
+metin_alanı.pack()
+karilama_metni="Mesajını buraya gir"
+metin_alanı.insert(END, karilama_metni,'style')
+
+gonder_butonu=Button(frame_alt_sag, text="Gönder", command=gonder)
+
+gonder_butonu.pack(anchor=S)
+
 master.mainloop()
