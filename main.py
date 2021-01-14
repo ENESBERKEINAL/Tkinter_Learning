@@ -54,9 +54,38 @@ var3=IntVar()
 C3=Checkbutton(frame_alt_sol, text="Aynı Gün", variable=var3, onvalue=1, offvalue=0,bg='#add8e6', font="verdana 10" )
 C3.pack(anchor=NW, pady=2, padx=25)
 
+from tkinter import messagebox
 def gonder():
-    pass
-    return
+    son_mesaj= ""
+    try:
+        if var.get():
+            if var.get() == 1:
+                son_mesaj += "Veriniz basarıyla sisteme kaydedilmiştir."
+
+                tip =hatirlatma_tipi_opsiyon.get() if hatirlatma_tipi_opsiyon.get()=='' else "Genel"
+                tarih = hatirlatma_tarih_secici.get()
+                mesaj = metin_alanı.get("1.0", "end")
+
+                with open("hatırlatmalar.txt","w") as dosya:
+                    dosya.write('{} kategorisinde,{} tarihine ve "{}" notuyla hatırlatma'.format(
+                        tip,
+                        tarih,
+                        mesaj
+                    ))
+                    dosya.close()
+
+            elif var.get() ==2:
+                son_mesaj += "E-posta yoluyla hatırlatma size ulaşacaktır."
+
+            messagebox.showinfo("Basarili Islem", son_mesaj)
+        else:
+            son_mesaj += "Gerekli alanların doldurulgundan emin olun !"
+            messagebox.showwarning("Yetersiz Bilgi", son_mesaj)
+    except:
+        son_mesaj += "İşlem başarısız oldu"
+        messagebox.showerror("Başarısız işlem", son_mesaj)
+    finally:
+        master.destroy()
 
 Label(frame_alt_sag, bg='#add8e6', text="Hatırlatma Mesajı",font="verdana 15 bold").pack(padx=10, pady=10, anchor=NW)
 
