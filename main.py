@@ -34,4 +34,12 @@ hatirlatma_tarih_secici.pack(padx=10, pady=10, side=LEFT)
 
 Label(frame_alt_sol, bg='#add8e6', text="Hatırlatma Yöntemi",font="verdana 10 bold").pack(padx=10, pady=10, anchor=NW)
 
+var= IntVar()
+
+R1=Radiobutton(frame_alt_sol, text="Sisteme Kaydet", variable=var, value=1, bg='#add8e6', font="verdana 10" )
+R1.pack(anchor=NW, pady=5, padx=15)
+
+R2=Radiobutton(frame_alt_sol, text="E-posta gönder", variable=var, value=2, bg='#add8e6', font="verdana 10" )
+R2.pack(anchor=NW, pady=5, padx=15)
+
 master.mainloop()
